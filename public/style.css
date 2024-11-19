@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #050505;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f1e3ee;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hero {
+    color: #050505;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 0 0 12px 12px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: transparent;
+    color: #000000;  
+    border: 2px solid #000000;  
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;  
+}
+
+button:hover {
+    background-color: white;  
+    color: #000000;  
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    background-color: #e6e5e5;
+}
+
+.about {
+    background-color: #ffffff;
+    font-size: 18px;
+}
+
+.menu {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: flex-start;  
+    gap: 30px;
+    margin-top: 20px;
+    overflow-x: auto;  
+    scroll-snap-type: x mandatory;  
+    padding-bottom: 10px;  
+}
+
+/* Cada item de menu */
+.menu-item {
+    background: #f5f3f3;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    flex-shrink: 0;  
+    scroll-snap-align: start;  
+}
+
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+}
+
+
+.menu-item h4 {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #0e0d0d;
+}
+
+
+.menu-item p {
+    font-size: 18px;
+    color: #080808;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .menu-items {
+        gap: 15px;  
+    }
+
+    .menu-item {
+        width: 200px;  
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-items {
+        gap: 10px;  
+    }
+
+    .menu-item {
+        width: 180px;  
+    }
+}
+
+
+.contact form {
+    width: 70%;  
+    max-width: 600px;  
+    margin: 0 auto;  
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px; 
+    background-color: #e6e5e5;  
+    border-radius: 12px;  
+}
+
+
+.contact form input,
+.contact form textarea {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.contact form textarea {
+    height: 150px;
+}
+.contact h3 {
+    margin-bottom: 20px; 
+}
+
+.contact form button {
+    background-color: transparent;
+    color: #000000;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #000000;  
+}
+
+.contact form button:hover {
+    background-color: white;  
+    color: #000000;  
+}
+
+.contact form button:focus {
+    outline: none;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form button {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#responseMessage {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    
+    
+}
+
+.whatsapp-container {
+    text-align: center;
+    margin-top: 15px;
+    padding: 20px;
+}
+
+
+.whatsapp-logo {
+    width: 50px; 
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.whatsapp-logo:hover {
+    transform: scale(1.1); 
+}
+
+footer {
+    text-align: center;
+    background-color: #666666;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+footer p {
+    font-size: 14px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pagamento</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Pagamento</h1>
+        <p id="product-name"></p>
+
+        <form id="payment-form">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="neighborhood">Bairro:</label>
+                <input type="text" id="neighborhood" name="neighborhood" required>
+                
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">Estado:</label>
+                <input type="text" id="state" name="state" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações de Pagamento</legend>
+                <label for="card-number">Número do Cartão:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                
+                <label for="expiry-date">Data de Expiração:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+                
+                <label for="cvv">Código de Segurança (CVV):</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </fieldset>
+
+            <button type="submit">Confirmar Pagamento</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('produto');
+
+            if (product) {
+                document.getElementById('product-name').textContent = `Produto selecionado: ${product}`;
+            }
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();  
+
+            
+            const data = {
+                nome: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('phone').value,
+                endereco: document.getElementById('address').value,
+                bairro: document.getElementById('neighborhood').value,
+                cidade: document.getElementById('city').value,
+                estado: document.getElementById('state').value,
+                numero_cartao: document.getElementById('card-number').value,
+                data_expiracao: document.getElementById('expiry-date').value,
+                cvv: document.getElementById('cvv').value
+            };
+
+            
+            if (!data.nome || !data.email || !data.telefone || !data.endereco || !data.bairro || !data.cidade || !data.estado || !data.numero_cartao || !data.data_expiracao || !data.cvv) {
+                alert('Todos os campos são obrigatórios!');
+                return;
+            }
+
+            const message = `
+                Olá ${data.nome},<br>
+                Seu pagamento foi processado com sucesso!<br>
+                Detalhes do pagamento:<br>
+                - Nome: ${data.nome}<br>
+                - E-mail: ${data.email}<br>
+                - Telefone: ${data.telefone}<br>
+                - Endereço: ${data.endereco}, ${data.bairro}, ${data.cidade} - ${data.estado}<br>
+                - Cartão: ${data.numero_cartao}<br>
+                Agradecemos pela sua compra!`;
+
+            document.getElementById('message').innerHTML = message;
+        });
+        const selectedProduct = localStorage.getItem('selectedProduct');
+        if (selectedProduct) {
+            document.getElementById('product').value = selectedProduct;
+        }
+
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            console.log('Enviando dados de pagamento:', { name, email, selectedProduct });
+        });
+    </script>
+</body>
+</html>

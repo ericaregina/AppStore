@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>AppStore</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <button id="showMenu">Clique para ver nossas opções</button>
+    </section>
+
+    <section id="about" class="about">
+        <p> Bem-vindo à AppStore, aqui temos as melhores opções de iPhone para você, com entrega para toda região de Santa Catarina!</p>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="images/15max.jpg" alt="iPhone 15 Pro Max">
+                <h4>iPhone 15 Pro Max</h4>
+                <p>A partir de R$ 10.499</p>
+                <button class="buy-now" data-product="iPhone 15 Pro Max">Comprar</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/15.jpg" alt="iPhone 15 Pro">
+                <h4>iPhone 15 Pro</h4>
+                <p>A partir de R$ 8.999</p>
+                <button class="buy-now" data-product="iPhone 15 Pro">Comprar</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/14max.jpg" alt="iPhone 14 Pro Max">
+                <h4>iPhone 14 Pro Max</h4>
+                <p>A partir de R$ 9.799</p>
+                <button class="buy-now" data-product="iPhone 14 Pro Max">Comprar</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/14.jpg" alt="iPhone 14 Pro">
+                <h4>iPhone 14 Pro</h4>
+                <p>A partir de R$ 7.999</p>
+                <button class="buy-now" data-product="iPhone 14 Pro">Comprar</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/13.jpg" alt="iPhone 13">
+                <h4>iPhone 13</h4>
+                <p>A partir de R$ 6.999</p>
+                <button class="buy-now" data-product="iPhone 13">Comprar</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/12.jpg" alt="iPhone 12">
+                <h4>iPhone 12</h4>
+                <p>A partir de R$ 5.499</p>
+                <button class="buy-now" data-product="iPhone 12">Comprar</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/11.jpg" alt="iPhone 11">
+                <h4>iPhone 11</h4>
+                <p>A partir de R$ 3.509</p>
+                <button class="buy-now" data-product="iPhone 11">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h3>Entre em Contato</h3>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Seu nome" required>
+            <input type="email" id="email" placeholder="Seu e-mail" required>
+            <textarea id="message" placeholder="Sua mensagem" required></textarea>
+            <input type="hidden" id="product" name="product">
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="responseMessage"></div>
+    </section>   
+
+    <div class="whatsapp-container">
+        <a href="https://wa.me/5547992806411" target="_blank">
+            <img src="images/whats.jpg" alt="WhatsApp" class="whatsapp-logo">
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; AppStore | Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
